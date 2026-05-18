@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Purple d20 with question mark">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Purple d20 with question mark and white outline">
   <defs>
     <linearGradient id="g" x1="3" y1="2" x2="13" y2="14" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#8b68dc"/>
@@ -6,8 +6,12 @@
     </linearGradient>
   </defs>
 
-  <!-- d20 body -->
-  <path d="M8 1.1 14.6 4.4 13.8 11.3 8 14.9 2.2 11.3 1.4 4.4Z" fill="url(#g)"/>
+  <!-- d20 body with outer white outline -->
+  <path d="M8 1.1 14.6 4.4 13.8 11.3 8 14.9 2.2 11.3 1.4 4.4Z"
+        fill="url(#g)"
+        stroke="#fff"
+        stroke-width="0.9"
+        stroke-linejoin="round"/>
 
   <!-- simplified die facets, tuned for 16x16 favicon size -->
   <g fill="none" stroke="#fff" stroke-width="1.05" stroke-linecap="round" stroke-linejoin="round">
