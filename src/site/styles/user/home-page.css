@@ -1,7 +1,11 @@
 .home-page {
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 24px;
+  width: min(15000px, calc(100vw - 48px));
+  max-width: none;
+
+  margin-left: 50%;
+  transform: translateX(-50%);
+
+  padding: 24px 0;
 }
 
 /* Верхний баннер */
