@@ -1,0 +1,247 @@
+.home-page {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Верхний баннер */
+
+.home-hero {
+  margin-bottom: 28px;
+}
+
+.home-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+}
+
+/* Основная раскладка под баннером */
+
+.home-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  grid-template-areas:
+    "welcome about"
+    "systems about";
+  gap: 28px;
+  align-items: start;
+}
+
+.home-welcome {
+  grid-area: welcome;
+
+  padding: 24px 26px;
+
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+}
+
+.home-welcome h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.home-welcome p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  opacity: 0.88;
+}
+
+/* Блок "Обо мне" */
+
+.home-about {
+  grid-area: about;
+
+  position: sticky;
+  top: 24px;
+
+  padding: 24px;
+
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.055);
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.075);
+}
+
+.home-about h2 {
+  margin: 0 0 14px;
+  font-size: 1.45rem;
+}
+
+.home-about p {
+  margin: 0;
+  line-height: 1.65;
+  opacity: 0.88;
+}
+
+/* Сетка карточек систем */
+
+.system-grid {
+  grid-area: systems;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.system-card,
+.channels-card {
+  min-width: 0;
+}
+
+.system-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  aspect-ratio: 16 / 10;
+
+  border-radius: 22px;
+  text-decoration: none;
+  color: inherit;
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.24),
+    0 2px 6px rgba(0, 0, 0, 0.18);
+
+  transform: translateY(0);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.system-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+}
+
+.system-card span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  min-height: 25%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px;
+
+  background: rgba(48, 48, 54, 0.68);
+  backdrop-filter: blur(6px);
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.system-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 22px 42px rgba(0, 0, 0, 0.32),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+
+  filter: brightness(1.05);
+}
+
+.channels-card {
+  aspect-ratio: 16 / 10;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+
+  padding: 20px;
+
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.055);
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.24),
+    0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.channel-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.075);
+
+  color: inherit;
+  text-decoration: none;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.channel-link:hover {
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateY(-2px);
+}
+
+.channel-icon {
+  width: 28px;
+  height: 28px;
+
+  display: block;
+  flex-shrink: 0;
+
+  object-fit: contain;
+}
+
+/* Мобильная версия */
+
+@media (max-width: 980px) {
+  .home-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "welcome"
+      "about"
+      "systems";
+  }
+
+  .home-about {
+    position: static;
+  }
+  
+  .system-grid {
+  grid-template-columns: 1fr;
+}
+}
+
+@media (min-width: 981px) {
+  .channels-card {
+    order: 6;
+  }
+
+  .articles-card {
+    order: 7;
+    margin-top: 36px;
+  }
+}
