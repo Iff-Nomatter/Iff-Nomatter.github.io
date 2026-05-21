@@ -1,5 +1,5 @@
 .home-page {
-  width: min(15000px, calc(100vw - 48px));
+  width: min(1500px, calc(100vw - 48px));
   max-width: none;
 
   margin-left: 50%;
